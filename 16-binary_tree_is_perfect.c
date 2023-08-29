@@ -15,9 +15,9 @@ int check_if_perfect(const binary_tree_t *tree)
 		left_side = 1 + check_if_perfect(tree->left);
 		right_side = 1 + check_if_perfect(tree->right);
 		if (right_side == left_side &&
-			right_side != 0 &&
-			left_side != 0)
-				return (right_side);
+		right_side != 0 &&
+		left_side != 0)
+			return (right_side);
 		return (0);
 	}
 	else if (!tree->left && !tree->right)
@@ -35,7 +35,9 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	int output = 0;
 
 	if (tree == NULL)
+	{
 		return (0);
+	}
 	else
 	{
 		output = check_if_perfect(tree);
