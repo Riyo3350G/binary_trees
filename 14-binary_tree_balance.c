@@ -22,7 +22,7 @@ int binary_tree_balance(const binary_tree_t *tree)
 }
 
 /**
- * binary_tree_height - Measures the height of a binary tree.
+ * binary_tree_height_bl - Measures the height of a binary tree.
  * @tree: pointer to the root node of the tree to measure the height.
  * Return: height of tree
  */
