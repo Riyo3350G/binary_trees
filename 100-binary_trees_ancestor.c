@@ -6,7 +6,8 @@
  * @s: stands for second node -> Pointer to the second node.
  * Return: a pointer to the lowest common ancestor node of the two given nodes
  */
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *f, const binary_tree_t *s)
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *f,
+	const binary_tree_t *s)
 {
 	const binary_tree_t *firstNode;
 	const binary_tree_t *secondNode;
