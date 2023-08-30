@@ -7,18 +7,19 @@
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	size_t left_side, right_side;
+	size_t left_side;
+	size_t right_side;
 
-	right_side = 0;
-	left_side = 0;
+	if (tree == NULL)
+		return (0);
 
-	if (tree)
-	{
-		left_side = tree->left ? 1 + binary_tree_height(tree->left) : 0;
-		right_side = tree->right ? 1 + binary_tree_height(tree->right) : 0;
-		return ((left_side > right_side) ? left_side : right_side);
-	}
-	return (0);
+	left_side = binary_tree_height(tree->left);
+	right_side = binary_tree_height(tree->right);
+
+	if (left_side >= right_side)
+		return (1 + left_side);
+
+	return (1 + right_side);
 }
 
 /**
@@ -67,6 +68,10 @@ void binary_tree_levelorder(const binary_tree_t *tree,
 
 	treeHeight = binary_tree_height(tree);
 
-	for (index = 1; index <= treeHeight; index++)
-		binary_tree_level(tree, index, func);
+	index = 1;
+	while (index <= treeHeight)
+	{
+		tree_level_action(tree, index, func);
+		index++;
+	}
 }
