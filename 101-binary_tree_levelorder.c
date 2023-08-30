@@ -69,6 +69,8 @@ void binary_tree_levelorder(const binary_tree_t *tree,
 
 	index = 1;
 	while (index < treeHeight)
+	{
 		tree_level_action(tree, index, func);
 		index++;
+	}
 }
