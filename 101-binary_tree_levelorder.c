@@ -28,8 +28,8 @@ size_t binary_tree_height(const binary_tree_t *tree)
  * @level: The level at which the action should be performed
  * @func: A pointer to a function that takes an integer
  * Return: Nothing
- * 
 */
+
 void tree_level_action(const binary_tree_t *tree, size_t level,
 	void (*func)(int))
 {
@@ -38,9 +38,12 @@ void tree_level_action(const binary_tree_t *tree, size_t level,
 		return;
 	}
 
-	if (level == 1) {
+	if (level == 1)
+	{
 		func(tree->n);
-	} else {
+	}
+	else
+	{
 		tree_level_action(tree->left, level - 1, func);
 		tree_level_action(tree->right, level - 1, func);
 	}
